@@ -1,0 +1,430 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title> Surpriseeeeee 🎂</title>
+	<link rel="shortcut icon" href="#">
+	<style>
+        body {
+            font-size: 18px;
+            font-family: 'Comic Sans MS'; /*"Lucida Console", Courier, monospace;*/
+            background: radial-gradient(ellipse at center, #1b2735 0%, #090a0f 100%);
+            background-size: cover;
+            min-height: 100vh;
+            color: #EAEAEA;
+        }
+
+        button {
+            font-size: 18px;
+            font-family: 'Comic Sans MS';
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+            border: none;
+            padding: 15px 32px;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(79, 172, 254, 0.4); /* Creates a subtle glow */
+            transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover effects */
+        }
+        button:hover {
+            transform: translateY(-2px); /* Lifts the button slightly */
+            box-shadow: 0 6px 20px rgba(79, 172, 254, 0.6); /* Increases the glow */
+        }
+        
+
+        #start {
+            background-color: #e57373;
+            color: #333;
+            font-size: 18px;
+            font-family: 'Comic Sans MS';
+            color: #333;
+            background-color: #e57373;
+            border: none;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+            backdrop-filter: blur(10px); /* This creates the blur */
+            -webkit-backdrop-filter: blur(10px); /* For Safari support */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+            border-radius: 15px; /* A bit more rounding looks nice with this style */
+            transition: background-color 0.3s ease; /* Smooth hover effect */
+        }
+
+        #startconsoledebug {
+            background-color: yellow;
+            color: #333;
+        }
+
+        #stopconsoledebug {
+            background-color: orange;
+            color: #333;
+        }
+
+        #microphonestatus, #audiostatus, #recording {
+            font-size: 36px;
+            font-family: 'Comic Sans MS';
+            background-color: black;
+            color: white;
+        }
+
+        td, th {
+            border: 1px solid;
+            text-align: left;
+            padding: 10px;
+        }
+
+        body {
+            background: radial-gradient(ellipse at center, #1b2735 0%, #090a0f 100%);
+            background-size: cover;
+            min-height: 100vh;
+            color: #d6e7e8;
+        }
+
+        .cake {
+            position: absolute;
+            width: 250px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            /*margin-top: 300px;
+            margin-left: -125px;*/
+            transform: translate(-50%, -50%)
+        }
+
+        .plate {
+            width: 270px;
+            height: 110px;
+            position: absolute;
+            bottom: -10px;
+            left: -10px;
+            background-color: #ccc;
+            border-radius: 50%;
+            box-shadow: 0 2px 0 #b3b3b3, 0 4px 0 #b3b3b3, 0 5px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .cake > * {
+            position: absolute;
+        }
+
+        .layer {
+            position: absolute;
+            display: block;
+            width: 250px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #553c13;
+            box-shadow: 0 2px 0px #6a4b18, 0 4px 0px #33240b, 0 6px 0px #32230b, 0 8px 0px #31230b, 0 10px 0px #30220b, 0 12px 0px #2f220b, 0 14px 0px #2f210a, 0 16px 0px #2e200a, 0 18px 0px #2d200a, 0 20px 0px #2c1f0a, 0 22px 0px #2b1f0a, 0 24px 0px #2a1e09, 0 26px 0px #2a1d09, 0 28px 0px #291d09, 0 30px 0px #281c09;
+        }
+
+        .layer-top {
+            top: 0px;
+        }
+
+        .layer-middle {
+            top: 33px;
+        }
+
+        .layer-bottom {
+            top: 66px;
+        }
+
+        .icing {
+            top: 2px;
+            left: 5px;
+            background-color: #f0e4d0;
+            width: 240px;
+            height: 90px;
+            border-radius: 50%;
+        }
+
+        .icing:before {
+            content: "";
+            position: absolute;
+            top: 4px;
+            right: 5px;
+            bottom: 6px;
+            left: 5px;
+            background-color: #f4ebdc;
+            box-shadow: 0 0 4px #f6efe3, 0 0 4px #f6efe3, 0 0 4px #f6efe3;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .drip {
+            display: block;
+            width: 50px;
+            height: 60px;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+            background-color: #f0e4d0;
+        }
+
+        .drip1 {
+            top: 53px;
+            left: 5px;
+            transform: skewY(15deg);
+            height: 48px;
+            width: 40px;
+        }
+
+        .drip2 {
+            top: 69px;
+            left: 181px;
+            transform: skewY(-15deg);
+        }
+
+        .drip3 {
+            top: 54px;
+            left: 90px;
+            width: 80px;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+        }
+
+        .candle {
+            background-color: #7b020b;
+            width: 16px;
+            height: 50px;
+            border-radius: 8px / 4px;
+            top: -20px;
+            left: 50%;
+            margin-left: -8px;
+            z-index: 10;
+        }
+
+        .candle:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 16px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #ad030f;
+        }
+
+        .flame {
+            position: absolute;
+            background-color: orange;
+            width: 15px;
+            height: 35px;
+            border-radius: 10px 10px 10px 10px / 25px 25px 10px 10px;
+            top: -34px;
+            left: 50%;
+            margin-left: -7.5px;
+            z-index: 10;
+            box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 20px rgba(255, 165, 0, 0.5), 0 0 60px rgba(255, 165, 0, 0.5), 0 0 80px rgba(255, 165, 0, 0.5);
+            transform-origin: 50% 90%;
+            animation: flicker 1s ease-in-out alternate infinite;
+        }
+
+        @keyframes flicker {
+            0% {
+                transform: skewX(5deg);
+                box-shadow: 0 0 10px rgba(255, 165, 0, 0.2), 0 0 20px rgba(255, 165, 0, 0.2), 0 0 60px rgba(255, 165, 0, 0.2), 0 0 80px rgba(255, 165, 0, 0.2);
+            }
+            25% {
+                transform: skewX(-5deg);
+                box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 20px rgba(255, 165, 0, 0.5), 0 0 60px rgba(255, 165, 0, 0.5), 0 0 80px rgba(255, 165, 0, 0.5);
+            }
+            50% {
+                transform: skewX(10deg);
+                box-shadow: 0 0 10px rgba(255, 165, 0, 0.3), 0 0 20px rgba(255, 165, 0, 0.3), 0 0 60px rgba(255, 165, 0, 0.3), 0 0 80px rgba(255, 165, 0, 0.3);
+            }
+            75% {
+                transform: skewX(-10deg);
+                box-shadow: 0 0 10px rgba(255, 165, 0, 0.4), 0 0 20px rgba(255, 165, 0, 0.4), 0 0 60px rgba(255, 165, 0, 0.4), 0 0 80px rgba(255, 165, 0, 0.4);
+            }
+            100% {
+                transform: skewX(5deg);
+                box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 20px rgba(255, 165, 0, 0.5), 0 0 60px rgba(255, 165, 0, 0.5), 0 0 80px rgba(255, 165, 0, 0.5);
+            }
+        }
+
+        #cake-holder .cake-off {
+            opacity: 0;
+            transition: 1s ease-in all;
+        }
+
+        #cake-holder.done .cake-off {
+            opacity: 1;
+            transition: 1s ease-in all;
+            font-size: 18px;
+        }
+
+        #cake-holder .cake .flame {
+            opacity: 1;
+            transition: 0.3s ease-in all;
+        }
+
+        #cake-holder.done .flame {
+            opacity: 0;
+        }
+
+        .text-center {
+            text-align: center;
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+
+        .photo-strip-container {
+            width: 100%;
+            background-color: #1a1a1a; /* A dark background for the strip area */
+            padding: 15px 0;           /* Adds some vertical space */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Adds depth below the strip */
+            display: flex;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.8s ease-in-out;
+            margin-top: 350px;
+        }
+        .photo-strip-container.is-visible {
+            opacity: 1;                          /* Makes it fully visible */
+            pointer-events: auto;                /* Allows interaction again */
+        }
+
+        /* 2. The strip itself (the scrolling part) */
+        .photo-strip {
+            display: flex;              /* The magic for horizontal layout! */
+            overflow-x: auto;           /* Creates the horizontal scrollbar if needed */
+            padding: 10px;              /* Space inside the strip */
+            -ms-overflow-style: none;   /* IE and Edge */
+            scrollbar-width: none;      /* Firefox */
+        }
+        /* For Chrome, Safari and Opera */
+        .photo-strip {
+            display: inline-flex;       /* Makes the strip only as wide as its content */
+            background-color: white;    /* The white paper background */
+            padding: 8px;              /* The thick white border around the photos */
+            border-radius: 8px;         /* Slightly rounded corners for the strip */
+            box-shadow: 0 5px 20px rgba(0,0,0,0.25); /* A softer, more realistic shadow */
+    
+            overflow-x: auto;           /* Enables horizontal scrolling */
+            gap: 10px;                  /* THE KEY: Creates the white space BETWEEN photos */
+
+            /* Hides the scrollbar for a cleaner look */
+            -ms-overflow-style: none;  
+            scrollbar-width: none;     
+        }
+        .photo-strip::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* 3. The individual images in the strip */
+        .strip-image {
+            height: 180px;              /* Sets a uniform height for all photos */
+            width: auto;                /* Width adjusts to maintain aspect ratio */
+            margin: 0px;         /* Space between each photo */
+            border: 1px solid #ddd;    /* Classic white photo border */
+            box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease; /* Smooth hover effect */
+        }
+
+        /* 4. A nice hover effect for the images */
+        .strip-image:hover {
+            transform: scale(1.05) rotate(1deg); /* Slightly enlarges and tilts the photo on hover */
+            cursor: pointer;
+        }
+        .photo-container {
+        position: relative; /* This is key for positioning the caption */
+        }
+        .photo-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        text-align: center;
+        padding: 5px;
+        opacity: 0; /* Hidden by default */
+        transition: opacity 0.3s ease;
+        font-size: 14px;
+        }
+
+        .photo-container:hover .photo-caption {
+        opacity: 1; /* Show on hover */
+        }
+	</style>
+</head>
+
+<body class="text-center">
+<h1>Here's a little something for you cutie 🎂</h1>
+<br>
+<button id="start">Click here if you're on Chrome + maximise your screen + Blow the candle!</button>
+<button style="display: none" id="startconsoledebug">enable console logs</button>
+<button style="display: none" id="stopconsoledebug">disable console logs</button>
+<br>
+<br>
+<div id="cake-holder" style="opacity: 0">
+	<div class="cake">
+		<div class="plate"></div>
+		<div class="layer layer-bottom"></div>
+		<div class="layer layer-middle"></div>
+		<div class="layer layer-top"></div>
+		<div class="icing"></div>
+		<div class="drip drip1"></div>
+		<div class="drip drip2"></div>
+		<div class="drip drip3"></div>
+		<div class="candle">
+			<div class="flame"></div>
+		</div>
+	</div>
+
+    <div id="photoMemories" class="photo-strip-container">
+        <div class="photo-strip">
+            <div class="photo-container">
+            <img src="Picture1.jpg" alt="Photo memory 1" class="strip-image">
+            <div class="photo-caption">My pookie bear</div></div>
+            <div class="photo-container">
+            <img src="Picture2.jpg" alt="Photo memory 2" class="strip-image">
+            <div class="photo-caption">My handsome boy 😎</div></div>
+            <div class="photo-container">
+            <img src="Picture3.jpg" alt="Photo memory 3" class="strip-image">
+            <div class="photo-caption">My cutie</div></div>
+            <div class="photo-container">
+            <img src="Picture4.jpg" alt="Photo memory 4" class="strip-image">
+            <div class="photo-caption">My hottie shawtie</div></div>
+            <div class="photo-container">
+            <img src="Picture7.jpg" alt="Photo memory 4" class="strip-image">
+            <div class="photo-caption">My muscle man (hot)</div></div>
+            <div class="photo-container">
+            <img src="Picture6.jpg" alt="Photo memory 4" class="strip-image">
+            <div class="photo-caption">My smarty pants</div></div>
+            <div class="photo-container">
+            <img src="Picture8.jpg" alt="Photo memory 4" class="strip-image">
+            <div class="photo-caption">My goofy boy</div></div>
+            <div class="photo-container">
+            <img src="Picture5.jpg" alt="Photo memory 4" class="strip-image">
+            <div class="photo-caption"> My one and only 🥰</div></div>
+        </div>
+    </div>	
+    <div class="text-center">
+		<h5 class="cake-off">❣ Happy Birthday my dear bubba ❣ </h5>
+		<p class="cake-off">My dear sweetheart and love, I ain't with you physically (sorry about that) but I hope you like this tiny gift hehe. <br><br>You are such a sweet, caring, and hardworking man. I remember the first sunrise we shared together. And the others after that. I have seen that version of you, and the version today. Both have their own special charm 😉. But having spent time with you through the year, away and close, has been a beautiful experience. And I am grateful for every bit of it. Also, I am so proud of how much you have grown since I have known you, in every way possible. I am also certain that you will do really well in the future and accomplish everything that you wished for. So never give up, always look ahead, and keep growing and shining ✨. And if you ever feel down, you can always rely on your loved ones 🥰. (Never-ending hugs in store!)<br>I love youuuu so much ❤️ <br><br> Yours, Ananya 😘</p>
+	</div>
+
+</div>
+<!--
+	<canvas id="meter" width="500" height="50"></canvas>
+-->
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script src="cake.js"></script>
+<script src="volume-meter.js"></script>
+<script src="audioDetectionConfig.js"></script>
+<script src="audioDetection.js"></script>
+<script src="audioStream.js"></script>
+
+<script src="demoAudioRecorder.js"></script>
+<script src="demoAudioDetectionListeners.js"></script>
+<script src="demo.js"></script>
+</body>
+</html>
